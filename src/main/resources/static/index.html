@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>全国城市列表查询服务</title>
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Venus</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">演示 <span class="sr-only">(current)</span></a></li>
+                <li><a href="/swagger-ui.html" target="_blank">在线调试 <span class="sr-only">(current)</span></a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/manerfan/venus-passerby" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Venus <small>PasserBy</small></h1>
+        <p>全国城市列表查询系统</p>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">多级联动 <small>更多参数请移步 <a href="/swagger-ui.html#/region-controller" target="_blank">在线调试</a></small></div>
+    <div class="panel-body container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">省</div>
+                    <div class="panel-body">
+                        <select class="form-control select-1" data-order="1">
+                            <option>请选择</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">市</div>
+                    <div class="panel-body">
+                        <select class="form-control select-2" data-order="2">
+                            <option>请选择</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">县</div>
+                    <div class="panel-body">
+                        <select class="form-control select-3" data-order="3">
+                            <option>请选择</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">镇</div>
+                    <div class="panel-body">
+                        <select class="form-control select-4" data-order="4">
+                            <option>请选择</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">村</div>
+                    <div class="panel-body">
+                        <select class="form-control select-5" data-order="5">
+                            <option>请选择</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">模糊查询 <small>仅显示前十条，更多参数请移步 <a href="/swagger-ui.html#/region-controller/findByNameUsingGET" target="_blank">在线调试</a></small></div>
+    <div class="panel-body">
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">关键词</span>
+            <input id="keywords" type="text" class="form-control" placeholder="关键词" aria-describedby="basic-addon1">
+            <span class="input-group-btn">
+                <button id="btn_keywords" class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div>
+        <table id="table_keywords" class="table"></table>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="venus.js"></script>
+</body>
+</html>

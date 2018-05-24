@@ -1,0 +1,23 @@
+server:
+  port: 16531
+
+spring:
+  main:
+    banner-mode: log
+  mvc:
+    throw-exception-if-no-handler-found: true
+    view:
+      prefix: /static/
+      suffix: .html
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:/var/lib/venus/region.db
+
+logging:
+  config: classpath:log4j2-${spring.profiles.active:dev}.xml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

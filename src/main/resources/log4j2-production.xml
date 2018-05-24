@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="ERROR" strict="true" name="Dev Logging">
+    <Properties>
+        <Property name="patternLayout">
+            [%d{ISO8601}] [%level] %c{1.} %message%n{%throwable}
+        </Property>
+        <Property name="logFilePath">
+            /var/log/venus
+        </Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="RollingFile"
+                     fileName="${logFilePath}/venus.log"
+                     filePattern="${logFilePath}/venus.%d{dd}.log">
+            <PatternLayout pattern="${patternLayout}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <!--<SizeBasedTriggeringPolicy size="100 MB"/>-->
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="org." level="WARN" additivity="false">
+            <appender-ref ref="RollingFile"/>
+        </Logger>
+        <root level="INFO">
+            <appender-ref ref="RollingFile"/>
+        </root>
+    </Loggers>
+</Configuration>
