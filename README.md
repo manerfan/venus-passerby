@@ -20,9 +20,9 @@ docker run -d --rm --name venus -p 8080:1531 manerfan/venus-passerby
 
 ## Jar包运行
 
-下载 venus-passerby-1.0.0.zip 并解压到 /var/lib/venus
+下载 [venus-passerby-1.0.0.zip](https://github.com/manerfan/venus-passerby/releases/download/v1.0.0/venus-passerby-1.0.0.zip) 并解压到 /var/lib/venus
 
-下载 region.db 到 /var/lib/venus
+下载 [region.db](https://pan.baidu.com/s/18SOoQtH_qdOC6STh03rtvA) 到 /var/lib/venus
 
 进入/var/lib/venus目录执行
 
